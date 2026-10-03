@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	defaultAdminAddr       = ":9000"
+	defaultAdminAddr       = ":4000"
 	defaultShutdownTimeout = 15 * time.Second
 )
 
@@ -215,7 +215,11 @@ func (s *Server) shutdown() bool {
 	shutdownCtx, cancel := context.WithTimeout(context.Background(), s.cfg.ShutdownTimeout)
 	defer cancel()
 
+	var stopWg sync.WaitGroup
+
+	stopWg.Add(1)
 	go func() {
+		defer stopWg.Done()
 		if err := s.admin.Shutdown(shutdownCtx); err != nil {
 			s.logger.Error(shutdownCtx, "admin server shutdown failed", "error", err)
 		}
@@ -226,7 +230,9 @@ func (s *Server) shutdown() bool {
 	s.mu.Unlock()
 
 	for _, c := range components {
+		stopWg.Add(1)
 		go func(c Component) {
+			defer stopWg.Done()
 			s.logger.Info(shutdownCtx, "component stopping", "component", c.Name)
 
 			if err := c.Stop(shutdownCtx); err != nil {
@@ -238,6 +244,7 @@ func (s *Server) shutdown() bool {
 	done := make(chan struct{})
 	go func() {
 		s.wg.Wait()
+		stopWg.Wait()
 		close(done)
 	}()
 
