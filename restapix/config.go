@@ -27,7 +27,8 @@ const (
 // forwarding headers (X-Forwarded-For, X-Real-IP). An empty value trusts no
 // proxy: the reported client IP is always the direct remote address.
 type Config struct {
-	Addr string `json:"addr" yaml:"addr"`
+	Production bool   `json:"production" yaml:"production"`
+	Addr       string `json:"addr" yaml:"addr"`
 
 	ReadHeaderTimeout time.Duration `json:"readHeaderTimeout" yaml:"readHeaderTimeout"`
 	ReadTimeout       time.Duration `json:"readTimeout" yaml:"readTimeout"`

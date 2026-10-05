@@ -9,9 +9,9 @@ import (
 	"net"
 	"net/http"
 
+	"github.com/gin-gonic/gin"
 	"github.com/leetun2k2/go-bedrock/logx"
 	"github.com/leetun2k2/go-bedrock/serverx"
-	"github.com/gin-gonic/gin"
 )
 
 // Server wraps a *http.Server, routed by a *gin.Engine, and adapts it to
@@ -31,6 +31,12 @@ func New(cfg Config, logger *logx.Logger) (*Server, error) {
 	cfg = cfg.withDefaults()
 	if err := cfg.validate(); err != nil {
 		return nil, err
+	}
+
+	if cfg.Production {
+		gin.SetMode(gin.ReleaseMode)
+	} else {
+		gin.SetMode(gin.DebugMode)
 	}
 
 	engine := gin.New()
