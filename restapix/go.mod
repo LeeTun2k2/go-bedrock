@@ -3,13 +3,12 @@ module github.com/leetun2k2/go-bedrock/restapix
 go 1.27.1
 
 require (
-	github.com/leetun2k2/go-bedrock/logx v0.0.0-20261003141629-fe4b35898905
-	github.com/leetun2k2/go-bedrock/serverx v0.0.0-20261003141629-fe4b35898905
 	github.com/gin-gonic/gin v1.12.0
+	github.com/leetun2k2/go-bedrock/logx v0.0.0-20261005143546-245254849566
+	github.com/leetun2k2/go-bedrock/serverx v0.0.0-20261005143546-245254849566
 )
 
 require (
-	github.com/leetun2k2/go-bedrock/contextx v0.0.0-20261003124740-da690c80d816 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bytedance/gopkg v0.1.3 // indirect
 	github.com/bytedance/sonic v1.15.0 // indirect
@@ -25,6 +24,7 @@ require (
 	github.com/goccy/go-yaml v1.19.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.3.0 // indirect
+	github.com/leetun2k2/go-bedrock/contextx v0.0.0-20261005143546-245254849566 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
