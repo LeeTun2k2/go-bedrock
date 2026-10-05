@@ -12,7 +12,7 @@ type Logger struct {
 }
 
 // New creates a new Logger with the specified configuration.
-func New(cfg LoggerConfig) (*Logger, error) {
+func New(cfg *LoggerConfig) (*Logger, error) {
 	var logger *zap.Logger
 	var err error
 
