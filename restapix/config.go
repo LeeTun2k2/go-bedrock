@@ -26,6 +26,9 @@ const (
 // TrustedProxies lists the proxy IPs/CIDRs allowed to set client-IP
 // forwarding headers (X-Forwarded-For, X-Real-IP). An empty value trusts no
 // proxy: the reported client IP is always the direct remote address.
+//
+// CORSAllowOrigins lists the origins allowed to make cross-origin requests.
+// An empty value disables CORS entirely — no CORS middleware is installed.
 type Config struct {
 	Production bool   `json:"production" yaml:"production"`
 	Addr       string `json:"addr" yaml:"addr"`
@@ -36,6 +39,8 @@ type Config struct {
 	IdleTimeout       time.Duration `json:"idleTimeout" yaml:"idleTimeout"`
 
 	TrustedProxies []string `json:"trustedProxies" yaml:"trustedProxies"`
+
+	CORSAllowOrigins []string `json:"corsAllowOrigins" yaml:"corsAllowOrigins"`
 }
 
 func (c Config) addr() string {

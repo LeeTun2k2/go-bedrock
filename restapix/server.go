@@ -9,6 +9,7 @@ import (
 	"net"
 	"net/http"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/leetun2k2/go-bedrock/logx"
 	"github.com/leetun2k2/go-bedrock/serverx"
@@ -41,6 +42,11 @@ func New(cfg Config, logger *logx.Logger) (*Server, error) {
 
 	engine := gin.New()
 	engine.Use(recoveryMiddleware(logger))
+	engine.Use(sameSiteLaxMiddleware())
+
+	if len(cfg.CORSAllowOrigins) > 0 {
+		engine.Use(corsMiddleware(cfg.CORSAllowOrigins))
+	}
 
 	if err := engine.SetTrustedProxies(cfg.TrustedProxies); err != nil {
 		return nil, fmt.Errorf("restapix: trusted proxies: %w", err)
@@ -70,6 +76,28 @@ func recoveryMiddleware(logger *logx.Logger) gin.HandlerFunc {
 			"error", recovered, "path", c.Request.URL.Path)
 		c.AbortWithStatus(http.StatusInternalServerError)
 	})
+}
+
+// sameSiteLaxMiddleware sets the default SameSite mode applied to cookies
+// set via gin.Context.SetCookie during the request, mitigating CSRF while
+// still allowing top-level navigations (e.g. following a link) to carry the
+// cookie.
+func sameSiteLaxMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.SetSameSite(http.SameSiteLaxMode)
+		c.Next()
+	}
+}
+
+// corsMiddleware allows cross-origin requests from origins, with credentials
+// (cookies, Authorization header) included.
+func corsMiddleware(origins []string) gin.HandlerFunc {
+	cfg := cors.DefaultConfig()
+	cfg.AllowOrigins = origins
+	cfg.AllowCredentials = true
+	cfg.AllowHeaders = append(cfg.AllowHeaders, "Authorization")
+
+	return cors.New(cfg)
 }
 
 // Engine exposes the underlying *gin.Engine so callers can register routes,
