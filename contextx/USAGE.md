@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/contextx@latest
+go get github.com/leetun2k2/go-bedrock/contextx@latest
 ```
 
 ## Configure
@@ -21,7 +21,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/LeeTun2k2/go-bedrock/contextx"
+	"github.com/leetun2k2/go-bedrock/contextx"
 )
 
 func callService(ctx context.Context) {

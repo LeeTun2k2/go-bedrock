@@ -1,15 +1,15 @@
-module github.com/LeeTun2k2/go-bedrock/grpcx
+module github.com/leetun2k2/go-bedrock/grpcx
 
 go 1.27.1
 
 require (
-	github.com/LeeTun2k2/go-bedrock/logx v0.0.0-20261003141629-fe4b35898905
-	github.com/LeeTun2k2/go-bedrock/serverx v0.0.0-20261003141629-fe4b35898905
+	github.com/leetun2k2/go-bedrock/logx v0.0.0-20261003141629-fe4b35898905
+	github.com/leetun2k2/go-bedrock/serverx v0.0.0-20261003141629-fe4b35898905
 	google.golang.org/grpc v1.84.0
 )
 
 require (
-	github.com/LeeTun2k2/go-bedrock/contextx v0.0.0-20261003124740-da690c80d816 // indirect
+	github.com/leetun2k2/go-bedrock/contextx v0.0.0-20261003124740-da690c80d816 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect

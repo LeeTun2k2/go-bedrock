@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/logx@latest
+go get github.com/leetun2k2/go-bedrock/logx@latest
 ```
 
 ## Configure
@@ -21,8 +21,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/LeeTun2k2/go-bedrock/contextx"
-	"github.com/LeeTun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/contextx"
+	"github.com/leetun2k2/go-bedrock/logx"
 )
 
 func main() {

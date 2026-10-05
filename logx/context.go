@@ -3,7 +3,7 @@ package logx
 import (
 	"context"
 
-	"github.com/LeeTun2k2/go-bedrock/contextx"
+	"github.com/leetun2k2/go-bedrock/contextx"
 	"go.opentelemetry.io/otel/trace"
 )
 

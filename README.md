@@ -46,9 +46,9 @@ Each package has a focused README and a separate `USAGE.md` with installation, c
 Install only the modules required by the service:
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/serverx@latest
-go get github.com/LeeTun2k2/go-bedrock/restapix@latest
-go get github.com/LeeTun2k2/go-bedrock/logx@latest
+go get github.com/leetun2k2/go-bedrock/serverx@latest
+go get github.com/leetun2k2/go-bedrock/restapix@latest
+go get github.com/leetun2k2/go-bedrock/logx@latest
 ```
 
 Replace the package names with the modules needed by the application.

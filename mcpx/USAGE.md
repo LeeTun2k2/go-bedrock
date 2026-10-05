@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/mcpx@latest
+go get github.com/leetun2k2/go-bedrock/mcpx@latest
 ```
 
 ## Configure
@@ -25,9 +25,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/LeeTun2k2/go-bedrock/logx"
-	"github.com/LeeTun2k2/go-bedrock/mcpx"
-	"github.com/LeeTun2k2/go-bedrock/serverx"
+	"github.com/leetun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/mcpx"
+	"github.com/leetun2k2/go-bedrock/serverx"
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
 

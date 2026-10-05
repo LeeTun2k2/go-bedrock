@@ -15,7 +15,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/LeeTun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/logx"
 )
 
 const (

@@ -9,8 +9,8 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/LeeTun2k2/go-bedrock/logx"
-	"github.com/LeeTun2k2/go-bedrock/serverx"
+	"github.com/leetun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/serverx"
 	"github.com/gin-gonic/gin"
 )
 

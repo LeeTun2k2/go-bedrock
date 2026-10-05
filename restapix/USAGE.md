@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/restapix@latest
+go get github.com/leetun2k2/go-bedrock/restapix@latest
 ```
 
 ## Configure
@@ -26,9 +26,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/LeeTun2k2/go-bedrock/logx"
-	"github.com/LeeTun2k2/go-bedrock/restapix"
-	"github.com/LeeTun2k2/go-bedrock/serverx"
+	"github.com/leetun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/restapix"
+	"github.com/leetun2k2/go-bedrock/serverx"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/otelx@latest
+go get github.com/leetun2k2/go-bedrock/otelx@latest
 ```
 
 ## Configure
@@ -23,7 +23,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/LeeTun2k2/go-bedrock/otelx"
+	"github.com/leetun2k2/go-bedrock/otelx"
 )
 
 func main() {

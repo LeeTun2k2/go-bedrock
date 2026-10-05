@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/serverx@latest
+go get github.com/leetun2k2/go-bedrock/serverx@latest
 ```
 
 ## Configure
@@ -24,8 +24,8 @@ import (
 	"log"
 	"time"
 
-	"github.com/LeeTun2k2/go-bedrock/logx"
-	"github.com/LeeTun2k2/go-bedrock/serverx"
+	"github.com/leetun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/serverx"
 )
 
 func runWorker(ctx context.Context) error {

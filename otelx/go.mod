@@ -1,4 +1,4 @@
-module github.com/LeeTun2k2/go-bedrock/otelx
+module github.com/leetun2k2/go-bedrock/otelx
 
 go 1.27.1
 

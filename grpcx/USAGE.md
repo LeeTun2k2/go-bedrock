@@ -3,7 +3,7 @@
 ## Install
 
 ```sh
-go get github.com/LeeTun2k2/go-bedrock/grpcx@latest
+go get github.com/leetun2k2/go-bedrock/grpcx@latest
 ```
 
 ## Configure
@@ -21,9 +21,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/LeeTun2k2/go-bedrock/grpcx"
-	"github.com/LeeTun2k2/go-bedrock/logx"
-	"github.com/LeeTun2k2/go-bedrock/serverx"
+	"github.com/leetun2k2/go-bedrock/grpcx"
+	"github.com/leetun2k2/go-bedrock/logx"
+	"github.com/leetun2k2/go-bedrock/serverx"
 	"google.golang.org/grpc/health"
 	healthpb "google.golang.org/grpc/health/grpc_health_v1"
 )
