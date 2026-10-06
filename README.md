@@ -12,11 +12,13 @@ flowchart LR
     A --> C[Service lifecycle]
     A --> D[Observability]
     A --> E[Shared context]
+    A --> J[Data and storage]
 
     B --> F[restapix / grpcx / mcpx]
     C --> G[serverx]
     D --> H[logx / otelx]
     E --> I[contextx]
+    J --> K[postgresx]
 ```
 
 Application code owns domain rules and business workflows. `go-bedrock` provides the technical foundation around them:
@@ -25,7 +27,8 @@ Application code owns domain rules and business workflows. `go-bedrock` provides
 - consistent startup and graceful shutdown;
 - structured and trace-aware logging;
 - tracing, metrics, and context propagation;
-- reusable integration patterns for HTTP, gRPC, and MCP.
+- reusable integration patterns for HTTP, gRPC, and MCP;
+- production-ready PostgreSQL connection pooling.
 
 ## Packages
 
@@ -38,6 +41,7 @@ Application code owns domain rules and business workflows. `go-bedrock` provides
 | [`restapix`](restapix/README.md) | Run a Gin HTTP API with safe server defaults under the `serverx` lifecycle. |
 | [`grpcx`](grpcx/README.md) | Run a gRPC server under the `serverx` lifecycle. |
 | [`mcpx`](mcpx/README.md) | Run an MCP Streamable HTTP server under the `serverx` lifecycle. |
+| [`postgresx`](postgresx/README.md) | Manage a PostgreSQL connection pool under the `serverx` lifecycle. |
 
 Each package has a focused README and a separate `USAGE.md` with installation, configuration, and integration examples.
 
@@ -64,6 +68,8 @@ flowchart LR
     E[contextx] --> A
     F[logx] --> A
     G[otelx] --> A
+    H[postgresx] --> A
+    H --> C
 ```
 
 A typical service:
