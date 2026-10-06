@@ -18,7 +18,7 @@ flowchart LR
     C --> G[serverx]
     D --> H[logx / otelx]
     E --> I[contextx]
-    J --> K[postgresx]
+    J --> K[postgresx / redisx]
 ```
 
 Application code owns domain rules and business workflows. `go-bedrock` provides the technical foundation around them:
@@ -28,7 +28,8 @@ Application code owns domain rules and business workflows. `go-bedrock` provides
 - structured and trace-aware logging;
 - tracing, metrics, and context propagation;
 - reusable integration patterns for HTTP, gRPC, and MCP;
-- production-ready PostgreSQL connection pooling.
+- production-ready PostgreSQL connection pooling;
+- production-ready standalone Redis client.
 
 ## Packages
 
@@ -42,6 +43,7 @@ Application code owns domain rules and business workflows. `go-bedrock` provides
 | [`grpcx`](grpcx/README.md) | Run a gRPC server under the `serverx` lifecycle. |
 | [`mcpx`](mcpx/README.md) | Run an MCP Streamable HTTP server under the `serverx` lifecycle. |
 | [`postgresx`](postgresx/README.md) | Manage a PostgreSQL connection pool under the `serverx` lifecycle. |
+| [`redisx`](redisx/README.md) | Manage a standalone Redis client under the `serverx` lifecycle. |
 
 Each package has a focused README and a separate `USAGE.md` with installation, configuration, and integration examples.
 
@@ -70,6 +72,8 @@ flowchart LR
     G[otelx] --> A
     H[postgresx] --> A
     H --> C
+    I[redisx] --> A
+    I --> C
 ```
 
 A typical service:
